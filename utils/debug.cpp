@@ -24,7 +24,7 @@ void dprintf(const char* format, ...)
 	va_list args;
 	va_start(args, format);
 	*dprintf_msg = 0;
-	auto len = vsnprintf(dprintf_msg, sizeof(dprintf_msg), format, args);
+	auto len = vsnprintf_s(dprintf_msg, sizeof(dprintf_msg), format, args);
 	if (consoleEnabled)
 	{
 		DWORD written = 0;
