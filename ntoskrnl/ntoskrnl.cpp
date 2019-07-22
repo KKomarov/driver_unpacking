@@ -2884,13 +2884,13 @@ BOOL WINAPI DllMain(
         auto pnth = PIMAGE_NT_HEADERS(base + pdh->e_lfanew);
         __debugbreak(); //TODO: change this to whatever the original .sys used
         pnth->OptionalHeader.Subsystem = IMAGE_SUBSYSTEM_NATIVE;
-        pnth->OptionalHeader.MajorOperatingSystemVersion = 6;
-        pnth->OptionalHeader.MinorOperatingSystemVersion = 3;
-        pnth->OptionalHeader.MajorImageVersion = 0;
-        pnth->OptionalHeader.MinorImageVersion = 0;
+        pnth->OptionalHeader.MajorOperatingSystemVersion = 5;
+        pnth->OptionalHeader.MinorOperatingSystemVersion = 1;
+        pnth->OptionalHeader.MajorImageVersion = 5;
+        pnth->OptionalHeader.MinorImageVersion = 1;
         pnth->OptionalHeader.MajorSubsystemVersion = 6;
         pnth->OptionalHeader.MinorSubsystemVersion = 0;
-        pnth->OptionalHeader.DllCharacteristics = 0x160;
+        pnth->OptionalHeader.DllCharacteristics = 0x140;
         VirtualProtect((void*)base, 0x1000, oldProtect, &oldProtect);
         dinit(true);
     }

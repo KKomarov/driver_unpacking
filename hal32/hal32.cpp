@@ -1,4 +1,4 @@
-#define FAKE(x) void* x() { __debugbreak(); return #x; }
+#define FAKE(x) void* x() {  return #x; }
 FAKE(ExAcquireFastMutex_FAKE)
 FAKE(ExReleaseFastMutex_FAKE)
 FAKE(ExTryToAcquireFastMutex_FAKE)
